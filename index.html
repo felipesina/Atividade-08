@@ -115,7 +115,7 @@
             function intervalo() {
                 let numbint = document.getElementById("numbint").value;
                 let resultado = "";
-                if ( numbint >= 0 && numIntervalo <= 25) {
+                if (numbint >= 0 && numbint <= 25) {
                     resultado = "[0,25}";
                 } else if (numbint > 25 && numbint <= 50) {
                         resultado = "[25,50}";
@@ -136,10 +136,10 @@
             <p id="resultado4">Resultado: Novo salario: xx.xx, Ganho: xx.xx, Percentual: xx%</p>
             <label for="">Salário atual:</label>
             <input type="text" id="salario">
-            <input type="button" onclick="aumento()" value="Calcular">
+            <input type="button" onclick="exequestão4()" value="Calcular">
         </div>
         <script>
-            function aumento() {
+            function exequestão4(){
                 let salario = document.getElementById("salario").value;
                 let novosalario =0;
                 let ganho =0;
@@ -169,7 +169,7 @@
                 ganho = (salario/100) * 4;
                 novosalario = +salario + ganho;
                 }
-                document.getElementById("resultado4").innerHTML = `Resultado: Novo Sálario: ${novosalaraio}, Ganho: ${ganho}, percentual ${percentual}!`;
+                document.getElementById("resultado4").innerHTML = `Resultado: Novo Sálario: ${novosalario}, Ganho: ${ganho}, percentual ${percentual}!`;
             }
         </script>
         <div class="questao">
@@ -196,40 +196,42 @@
                 }
                 if(renda > 3000 && renda <= 4500 ){
                     imposto = renda - 3000;
-                    imposto = (imposto * 0.08) + 80;
+                    imposto = (imposto * 0.18) + 80;
                     resultado = `R$ ${imposto}`;
                 }
-                if(renda > 3000 && renda <= 4500 ){
-                    imposto = renda - 3000;
+                if(renda > 4500 ){
+                    imposto = renda - 4500;
                     imposto = (imposto * 0.28) + 350;
                     resultado = `R$ ${imposto}`;
                 }
                 document.getElementById("resultado5").innerHTML = `Resultado: ${resultado}!`;
             }
         </script>
+
         <div class="questao">
             <h1>Questã 06:<span> Calcular o salário de um funcionário <a
                         href="https://www.urionlinejudge.com.br/repository/UOJ_1008.html"
                         target="_blank">detalhar</a></span></h1>
             <p id="resultado6">Resultado: O funcionario xxxxxx vai receber xxx.</p>
             <label for="">Nome Funcionário</label>
-            <input type="text" id= "nome">
+            <input type="text" id="nome">
             <label for="">Valor Hora</label>
-            <input type="text" id= "valorhora">
+            <input type="text" id="valorhoras">
             <label for="">Total de Horas Trabalhado</label>
-            <input type="text" id= "horastrabalhadas">
+            <input type="text" id="horas">
             <input type="button" onclick="funcionario()" value="Calcular">
         </div>
+
         <script>
-            function funcionario() {
-                let horastrabalhadas = document.getElementById("horastrabalhadas").value;
-                let valorhora = document.getElementById("valorhora").value;
+            function funcionario(){
+                let horas = document.getElementById("horas").value;
+                let valorhoras = document.getElementById("valorhoras").value;
                 let nome = document.getElementById("nome").value;
-                let resultado = valorhora * horastrabalhadas;
-                }
+                let resultado = valorhoras * horas;
                 document.getElementById("resultado6").innerHTML = `Resultado: O funcionário ${nome} vai receber ${resultado}`;
             }
         </script>
+
         <div class="questao">
             <h1>Questã 07:<span> Calcular o consumo médio de um automóvel <a
                         href="https://www.urionlinejudge.com.br/repository/UOJ_1014.html"
@@ -239,15 +241,15 @@
             <input type="text" id="distancia">
             <label for="">Combustível gasto</label>
             <input type="text" id="combustivel">
-            <input type="button" onclick="consumomedio()" value="Calcular">
+            <input type="button" onclick="exequestao7()" value="Calcular">
         </div>
         <script>
-            function  consumomedio() {
-                let = document.getElementById("distancia").value;
-                let = document.getElementById("combustivel").value;
+            function  exequestao7(){
+                let distancia = document.getElementById("distancia").value;
+                let combustivel = document.getElementById("combustivel").value;
                 let resultado = distancia/combustivel;
-
                 document.getElementById("resultado7").innerHTML = `Resultado: O automóvel fez o consumo médio de ${resultado}`;
+            
             }
         </script>
     </div>
